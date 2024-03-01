@@ -310,6 +310,12 @@
 				this.empty();
 				this._initialize();
 			},
+		},
+		marks: function () {
+			if (!this.editing) return this.currentMarks else []
+		},
+		editing: function () {
+			return this.editing
 		}
 	};
 
