@@ -103,7 +103,7 @@
 				this.currentPointer = [];
 				this.redoMarks = [];
 				this.undoMarks = [];
-				this.currentMarks = [];
+				// this.currentMarks = [];
 			},
 			reset: function () {
 				this.empty();
