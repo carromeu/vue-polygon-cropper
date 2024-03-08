@@ -61,6 +61,7 @@
 				redoMarks: [],
 				undoMarks: [],
 				currentMarks: [],
+				marks: [],
 				redoList: [],
 				undoList: [],
 				redoPointer: [],
@@ -103,7 +104,7 @@
 				this.currentPointer = [];
 				this.redoMarks = [];
 				this.undoMarks = [];
-				// this.currentMarks = [];
+				this.currentMarks = [];
 			},
 			reset: function () {
 				this.empty();
@@ -212,6 +213,7 @@
 						this.ctx.drawImage(img, 0, 0);
 					};
 					img.src = dataUrl;
+					this.marks = this.currentMarks;
 					this.empty();
 				}
 
@@ -312,7 +314,7 @@
 			},
 		},
 		marks: function () {
-			if (!this.editing) return this.currentMarks else []
+			if (!this.editing) return this.marks else []
 		},
 		editing: function () {
 			return this.editing
