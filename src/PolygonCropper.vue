@@ -306,18 +306,18 @@
 				copy.putImageData(trimmed, 0, 0);
 				return copy.canvas;
 			},
+			marks: function () {
+				if (!this.editing) return this.marks else []
+			},
+			editing: function () {
+				return this.editing
+			}
 		},
 		watch: {
 			imageSource: function (val) {
 				this.empty();
 				this._initialize();
 			},
-		},
-		marks: function () {
-			if (!this.editing) return this.marks else []
-		},
-		editing: function () {
-			return this.editing
 		}
 	};
 
