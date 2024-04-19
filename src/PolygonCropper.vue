@@ -101,7 +101,7 @@
 				this.undoList = [];
 				this.redoPointer = [];
 				this.undoPointer = [];
-				this.currentPointer = [];
+				//this.currentPointer = [];
 				this.redoMarks = [];
 				this.undoMarks = [];
 				this.currentMarks = [];
