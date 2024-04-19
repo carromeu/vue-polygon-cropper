@@ -62,7 +62,6 @@
 				undoMarks: [],
 				currentMarks: [],
 				marks: [],
-				points: [],
 				redoList: [],
 				undoList: [],
 				redoPointer: [],
@@ -115,7 +114,6 @@
 				this._initialize();
 			},
 			savePointer: function (point) {
-				this.points[1] = point;
 				this.redoPointer = [];
 				this.currentPointer.push(point);
 				this.undoPointer.push(point);
@@ -194,12 +192,12 @@
 					let left = this.imageCanvas.offsetLeft;
 					let top = this.imageCanvas.offsetTop;
 					for (let i = 0; i < this.currentMarks.length; i += 2) {
-						marks[i].x = this.currentMarks[i]; //x
-						marks[i].y = this.currentMarks[i + 1]; //y
+						let x = this.currentMarks[i];
+						let y = this.currentMarks[i + 1]; 
 						if (i === 0) {
-							this.ctx.moveTo(marks[i].x  - left, marks[i].y - top);
+							this.ctx.moveTo(x - left, y - top);
 						} else {
-							this.ctx.lineTo(marks[i].x  - left, marks[i].y - top);
+							this.ctx.lineTo(x - left, y - top);
 						}
 					}
 					this.ctx.fillStyle = this.ctx.createPattern(this.imageObj, "repeat");
@@ -215,7 +213,7 @@
 						this.ctx.drawImage(img, 0, 0);
 					};
 					img.src = dataUrl;
-					// this.marks = this.currentMarks;
+					this.marks = this.currentPointer;
 					this.empty();
 				}
 
