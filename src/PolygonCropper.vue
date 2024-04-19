@@ -62,6 +62,7 @@
 				undoMarks: [],
 				currentMarks: [],
 				marks: [],
+				points: [],
 				redoList: [],
 				undoList: [],
 				redoPointer: [],
@@ -114,6 +115,7 @@
 				this._initialize();
 			},
 			savePointer: function (point) {
+				this.points[1] = point;
 				this.redoPointer = [];
 				this.currentPointer.push(point);
 				this.undoPointer.push(point);
